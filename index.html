@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Colégio Estadual Barbosa Ferraz</title>
+    <link rel="shortcut icon" href="imagens/index/barbosa.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #004aad;
+            --secondary: #00d4ff;
+            --dark: #1a1a1a;
+            --light: #f4f7f6;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
 
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* --- Header Moderno --- */
+        #header {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo-container { display: flex; align-items: center; gap: 15px; }
+        .logo-container img { height: 40px; }
+        .logo-container a { 
+            text-decoration: none; 
+            color: var(--primary); 
+            font-weight: 800; 
+            font-family: 'Montserrat';
+            font-size: 1.2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            margin-left: 20px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        nav a:hover { color: var(--primary); }
+
+        /* --- Banner Impactante --- */
+        #banner {
+            background: linear-gradient(135deg, #004aad 0%, #002d6b 100%);
+            color: var(--white);
+            padding: 100px 5% 60px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+
+        #banner h1 { 
+            font-family: 'Montserrat'; 
+            font-size: 3rem; 
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        #banner h3 { font-weight: 400; opacity: 0.9; max-width: 800px; margin: 0 auto; }
+
+        .popup-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: var(--secondary);
+            color: var(--primary);
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .popup-btn:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+        /* --- Seção de Cursos (Grid) --- */
+        .wrapper { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
+        
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-family: 'Montserrat'; font-size: 2.5rem; color: var(--primary); }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover { transform: translateY(-10px); }
+
+        .card-image {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .card-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        .card-content { padding: 25px; flex-grow: 1; }
+        
+        .card-content h3 { 
+            margin-top: 0; 
+            font-family: 'Montserrat'; 
+            font-size: 1.2rem; 
+            color: var(--primary);
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e1eaff;
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .info-row { font-size: 0.9rem; margin-bottom: 5px; color: #666; }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .social-icons img { 
+            width: 35px; 
+            filter: grayscale(1) invert(1); 
+            transition: var(--transition);
+        }
+
+        .social-icons img:hover { filter: grayscale(0) invert(0); }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            #banner h1 { font-size: 2rem; }
+            nav { display: none; } /* Aqui você pode implementar um menu hamburguer depois */
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="logo-container">
+            <img src="imagens/index/barbosa.png" alt="Logo Barbosa Ferraz" />
+            <a href="index.html">C.E. Barbosa Ferraz</a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="colegio.html">Colégio</a>
+            <a href="cursos.html">Cursos</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <section id="banner">
+        <img src="imagens/logo/logos+cursos2.png" style="max-width: 200px; margin-bottom: 20px;" />
+        <h1>Educação que Transforma</h1>
+        <h3>Desejamos que você encontre aqui as condições ideais para aprender, crescer e conquistar o seu futuro. Seja bem-vindo!</h3>
+        
+        <a href="https://drive.google.com/file/d/174yr8jjcydZHylwOva63xn1BWbbRBw_r/view?usp=sharing" class="popup-btn">
+            Comunicado: Comissão Eleitoral
+        </a>
+    </section>
+
+    <main class="wrapper">
+        <header class="section-title">
+            <h2>Catálogo de Cursos</h2>
+            <p>Formação técnica e profissional de excelência</p>
+        </header>
+
+        <div class="course-grid">
+            <a href="cursos.html" class="course-card">
+                <div class="card-image">
+                    <img src="imagens/index/desenvolvimento.png" alt="Técnico em Desenvolvimento de Sistemas">
+                </div>
+                <div class="card-content">
+                    <span class="tag">Integrado</span>
+                    <h3>Técnico em Desenvolvimento de Sistemas</h3>
+                    <div class="info-row"><strong>Duração:</strong> 03 anos</div>
+                    <div class="info-row"><strong>Período:</strong> Manhã</div>
+                </div>
+            </a>
+
+            <a href="cursos.html" class="course-card">
+                <div class="card-image">
+                    <img src="imagens/index/formacao.png" alt="Formação de Docentes">
+                </div>
+                <div class="card-content">
+                    <span class="tag">Integrado</span>
+                    <h3>Formação de Docentes</h3>
+                    <div class="info-row"><strong>Duração:</strong> 03 anos</div>
+                    <div class="info-row"><strong>Período:</strong> Manhã e Tarde</div>
+                </div>
+            </a>
+
+            <a href="cursos.html" class="course-card">
+                <div class="card-image">
+                    <img src="imagens/index/enfermagem_usado.png" alt="Técnico em Enfermagem">
+                </div>
+                <div class="card-content">
+                    <span class="tag">Subsequente</span>
+                    <h3>Técnico em Enfermagem</h3>
+                    <div class="info-row"><strong>Duração:</strong> 02 anos</div>
+                    <div class="info-row"><strong>Período:</strong> Tarde</div>
+                </div>
+            </a>
+
+            <a href="cursos.html" class="course-card">
+                <div class="card-image">
+                    <img src="imagens/index/administracao.png" alt="Técnico em Administração">
+                </div>
+                <div class="card-content">
+                    <span class="tag">Subsequente</span>
+                    <h3>Técnico em Administração</h3>
+                    <div class="info-row"><strong>Duração:</strong> 01 ano</div>
+                    <div class="info-row"><strong>Período:</strong> Noite</div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="inner">
+            <ul class="social-icons">
+                <li><a href="#"><img src="imagens/icones/rodape/fbc.png" alt="Facebook" /></a></li>
+                <li><a href="#"><img src="imagens/icones/rodape/gmc.png" alt="Google" /></a></li>
+                <li><a href="contato.html"><img src="imagens/icones/rodape/msgc.png" alt="Contato" /></a></li>
+                <li><a href="contato.html"><img src="imagens/icones/rodape/wppc.png" alt="WhatsApp" /></a></li>
+            </ul>
+            <p>&copy; 2026 Colégio Estadual Barbosa Ferraz. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
